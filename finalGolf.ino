@@ -27,15 +27,15 @@ const int stepsToMove = int(stepsPerRevolution * 45.0 / 360.0);
 // initialize the stepper library
 Stepper myStepper(stepsPerRevolution, IN1, IN3, IN2, IN4);
 
-const char *ssidList[] = {"UA-Alumnos", "Pedro"};
-const char *passwordList[] = {"41umn05WLC", "43628534"};
-const int numberOfNetworks = sizeof(ssidList); // Adjust this based on the number of WiFi networks you have
+const char *ssidList[] = {"UA-Alumnos", "PersonalWIFI"};
+const char *passwordList[] = {"41umn05WLC", "PersonalPASSWORD"}; // I can add the amount of wifis that i want - Pedro
+const int numberOfNetworks = sizeof(ssidList); 
 
 int currentNetwork = 0;
 
-const char *server = "18.209.28.198";
+const char *server = process.env.SERVER_IP;
 
-const char *mqtt_server = "18.208.253.37"; // broker
+const char *mqtt_server = process.env.BROKER_IP; // broker
 const char *mqtt_topic = "golf/#";
 
 int stock = 0;
